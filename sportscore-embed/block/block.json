@@ -1,0 +1,38 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "sportscore/embed",
+	"title": "SportScore — Live Scores & Fixtures",
+	"description": "Free embeddable live-scores and fixtures widget for football, basketball, cricket and tennis.",
+	"category": "widgets",
+	"icon": "chart-bar",
+	"keywords": ["sports", "scores", "football", "soccer", "basketball", "cricket", "tennis", "fixtures", "widget"],
+	"textdomain": "sportscore-embed",
+	"supports": {
+		"html": false,
+		"align": ["left", "center", "right", "wide"]
+	},
+	"attributes": {
+		"sport": {
+			"type": "string",
+			"default": "football"
+		},
+		"type": {
+			"type": "string",
+			"default": "team"
+		},
+		"slug": {
+			"type": "string",
+			"default": ""
+		},
+		"width": {
+			"type": "number",
+			"default": 320
+		},
+		"height": {
+			"type": "number",
+			"default": 420
+		}
+	},
+	"editorScript": "file:./edit.js"
+}

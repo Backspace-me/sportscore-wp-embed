@@ -1,0 +1,53 @@
+name: Build & attach plugin zip
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  zip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build plugin zip
+        run: |
+          set -euo pipefail
+          VERSION="${GITHUB_REF_NAME#v}"
+          ZIP="sportscore-embed-v${VERSION}.zip"
+          # Exclude the WP.org assets folder and repo-level files — the zip is
+          # ONLY the plugin source that gets deployed to /trunk/.
+          cp -r sportscore-embed /tmp/
+          (cd /tmp && zip -r "$GITHUB_WORKSPACE/$ZIP" "sportscore-embed" \
+            -x 'sportscore-embed/assets/*')
+          ls -la "$ZIP"
+          echo "ZIP=$ZIP" >> "$GITHUB_ENV"
+      - name: Attach zip to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ env.ZIP }}
+
+  deploy:
+    # Gated on a repo secret so the workflow is safe to land without
+    # immediately pushing anywhere. When you're ready to automate WP.org
+    # SVN releases from git tags, configure these secrets:
+    #   SVN_USERNAME, SVN_PASSWORD (from WordPress.org account)
+    # The gate keeps the workflow as a no-op until that's wired up.
+    if: ${{ false }}
+    needs: zip
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: WordPress Plugin Deploy
+        uses: 10up/action-wordpress-plugin-deploy@stable
+        env:
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          SLUG: sportscore-embed
+          VERSION: ${{ github.ref_name }}
+          ASSETS_DIR: sportscore-embed/assets
+          BUILD_DIR: sportscore-embed

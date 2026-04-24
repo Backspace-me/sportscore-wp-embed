@@ -1,0 +1,27 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Build artifacts
+*.bak
+*.orig
+*.log
+__pycache__/
+*.pyc
+
+# Plugin-build artifacts
+sportscore-embed-v*.zip
+
+# Local env / secrets (defence-in-depth — none expected in this repo)
+.env
+.env.*
+*.pem
+*.key
