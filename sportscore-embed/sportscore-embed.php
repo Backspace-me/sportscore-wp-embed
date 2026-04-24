@@ -3,14 +3,14 @@
  * Plugin Name:       SportScore — Live Scores & Fixtures
  * Plugin URI:        https://sportscore.com/embed/
  * Description:       Free embeddable live-scores and fixtures widget for football, basketball, cricket and tennis. Drop a shortcode or Gutenberg block, pick a team or league, done. No API key, no signup.
- * Version:           1.0.1
+ * Version:           1.0.2
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            SportScore
  * Author URI:        https://sportscore.com/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       sportscore-embed
+ * Text Domain:       sportscore-live-scores-fixtures
  *
  * @package SportScoreEmbed
  */
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // No direct access.
 }
 
-define( 'SPORTSCORE_EMBED_VERSION', '1.0.1' );
+define( 'SPORTSCORE_EMBED_VERSION', '1.0.2' );
 define( 'SPORTSCORE_EMBED_BASE_URL', 'https://sportscore.com' );
 
 /**

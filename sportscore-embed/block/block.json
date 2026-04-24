@@ -7,7 +7,7 @@
 	"category": "widgets",
 	"icon": "chart-bar",
 	"keywords": ["sports", "scores", "football", "soccer", "basketball", "cricket", "tennis", "fixtures", "widget"],
-	"textdomain": "sportscore-embed",
+	"textdomain": "sportscore-live-scores-fixtures",
 	"supports": {
 		"html": false,
 		"align": ["left", "center", "right", "wide"]

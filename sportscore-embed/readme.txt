@@ -2,9 +2,9 @@
 Contributors: sportscore
 Tags: sports, live scores, fixtures, football, soccer, basketball, cricket, tennis, widget, shortcode, gutenberg
 Requires at least: 6.0
-Tested up to: 6.6
+Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -77,6 +77,11 @@ Double-check the slug on sportscore.com. The URL format is `sportscore.com/embed
 
 == Changelog ==
 
+= 1.0.2 =
+* Updated "Tested up to" to WordPress 6.9.
+* Aligned text domain with the plugin slug (`sportscore-live-scores-fixtures`).
+* No code changes — functionality identical to 1.0.1.
+
 = 1.0.1 =
 * Polished readme and screenshots for plugin directory submission.
 * No code changes — functionality identical to 1.0.0.
@@ -90,6 +95,9 @@ Double-check the slug on sportscore.com. The URL format is `sportscore.com/embed
 * Slug input sanitised to `[a-z0-9-]` — malformed shortcodes skip rendering.
 
 == Upgrade Notice ==
+
+= 1.0.2 =
+Metadata-only update for WordPress 6.9 compatibility. Safe to upgrade.
 
 = 1.0.1 =
 Documentation polish only — no functional changes.
