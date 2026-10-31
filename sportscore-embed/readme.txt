@@ -21,7 +21,7 @@ SportScore is a free sports-data service. This plugin is a one-click WordPress w
 * No API key, no signup, no rate-limit paperwork (fair-use cap around 10,000 requests / 24h / IP)
 * Classic shortcode AND a native Gutenberg block — pick either
 * Auto-refreshing, mobile-responsive, dark-mode-aware
-* Ships with a compliant "Powered by SportScore" attribution link — the free-tier requirement is handled for you
+* Shows a small "Powered by SportScore" credit under the widget
 
 **How to use it — shortcode**
 
@@ -35,9 +35,9 @@ Insert the "SportScore — Live Scores & Fixtures" block, then pick sport, type,
 
 Browse teams and competitions at [sportscore.com/embed/](https://sportscore.com/embed/) — there's a one-click builder with presets for popular teams and leagues. Slugs look like `real-madrid`, `premier-league`, `national-basketball-association`, `indian-premier-league`.
 
-**The free-tier deal**
+**Attribution**
 
-The service is free in exchange for a visible dofollow backlink to sportscore.com on any page that renders the data. This plugin embeds the attribution line under the widget automatically, so compliance is zero-effort. Commercial / white-label (no attribution) is available on request — see [sportscore.com/developers/terms/](https://sportscore.com/developers/terms/).
+The widget shows a small "Powered by SportScore" credit. SportScore is free to use — see the [terms of use](https://sportscore.com/developers/terms/) for details.
 
 == External services ==
 
@@ -69,7 +69,7 @@ Football (soccer), basketball, cricket, tennis. More on the roadmap.
 
 = Can I use it on a commercial site? =
 
-Yes, as long as the "Powered by SportScore" dofollow link stays visible. For white-label / attribution-removed use, email `api@sportscore.com`.
+Yes. The plugin is free to use on any site, personal or commercial.
 
 = Where do I find the slug for my team or league? =
 
