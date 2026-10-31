@@ -1,6 +1,6 @@
 === SportScore — Live Scores & Fixtures ===
 Contributors: sportscore
-Tags: sports, live scores, fixtures, football, soccer, basketball, cricket, tennis, widget, shortcode, gutenberg
+Tags: live scores, fixtures, sports, football, widget
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 7.4
@@ -38,6 +38,18 @@ Browse teams and competitions at [sportscore.com/embed/](https://sportscore.com/
 **The free-tier deal**
 
 The service is free in exchange for a visible dofollow backlink to sportscore.com on any page that renders the data. This plugin embeds the attribution line under the widget automatically, so compliance is zero-effort. Commercial / white-label (no attribution) is available on request — see [sportscore.com/developers/terms/](https://sportscore.com/developers/terms/).
+
+== External services ==
+
+This plugin displays live sports data by embedding the SportScore widget from sportscore.com, and relies on this external service to function.
+
+When a visitor opens a page that contains a SportScore block or the [sportscore] shortcode, their browser loads the widget (an iframe) from https://sportscore.com/. The widget URL contains only the sport and the team/league slug you selected. This plugin sends no other data from your site or your visitors to SportScore.
+
+Service provided by SportScore:
+
+* Website: https://sportscore.com/
+* Terms of use: https://sportscore.com/developers/terms/
+* Privacy policy: https://sportscore.com/privacy/
 
 == Installation ==
 
