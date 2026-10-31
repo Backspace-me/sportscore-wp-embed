@@ -126,7 +126,7 @@ function sportscore_embed_render_iframe( $atts ) {
 			title="<?php echo esc_attr( sprintf( '%s %s %s fixtures', $sport, $type, $slug ) ); ?>">
 		</iframe>
 		<p class="sportscore-embed-attribution" style="font-size: 12px; margin: 6px 0 0; color: #546277;">
-			<a href="<?php echo esc_url( $attribution_href ); ?>" rel="dofollow" title="Sports data by SportScore">Powered by SportScore</a>
+			<a href="<?php echo esc_url( $attribution_href ); ?>" title="Sports data by SportScore">Powered by SportScore</a>
 		</p>
 	</div>
 	<?php
