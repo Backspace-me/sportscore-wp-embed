@@ -2,7 +2,7 @@
 Contributors: sportscore
 Tags: live scores, fixtures, sports, football, widget
 Requires at least: 6.0
-Tested up to: 6.9
+Tested up to: 7.1
 Requires PHP: 7.4
 Stable tag: 1.0.2
 License: GPLv2 or later
@@ -90,7 +90,7 @@ Double-check the slug on sportscore.com. The URL format is `sportscore.com/embed
 == Changelog ==
 
 = 1.0.2 =
-* Updated "Tested up to" to WordPress 6.9.
+* Tested up to WordPress 7.1.
 * Aligned text domain with the plugin slug (`sportscore-live-scores-fixtures`).
 * No code changes — functionality identical to 1.0.1.
 
