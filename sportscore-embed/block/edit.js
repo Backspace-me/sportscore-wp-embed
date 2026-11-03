@@ -21,6 +21,7 @@
 	var SelectControl = wp.components.SelectControl;
 	var TextControl = wp.components.TextControl;
 	var RangeControl = wp.components.RangeControl;
+	var ToggleControl = wp.components.ToggleControl;
 
 	var SPORTS = [
 		{ label: "Football / Soccer", value: "football" },
@@ -114,6 +115,12 @@
 							max: 900,
 							value: attributes.height,
 							onChange: function (value) { setAttributes({ height: value }); }
+						}),
+						el(ToggleControl, {
+							label: "Show “Powered by SportScore” credit",
+							help: "Adds a small credit link under the widget. Off by default.",
+							checked: !!attributes.credit,
+							onChange: function (value) { setAttributes({ credit: !!value }); }
 						})
 					)
 				),

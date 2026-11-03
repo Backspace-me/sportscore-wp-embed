@@ -3,7 +3,7 @@
  * Plugin Name:       SportScore — Live Scores & Fixtures
  * Plugin URI:        https://sportscore.com/embed/
  * Description:       Free embeddable live-scores and fixtures widget for football, basketball, cricket and tennis. Drop a shortcode or Gutenberg block, pick a team or league, done. No API key, no signup.
- * Version:           1.0.2
+ * Version:           1.0.3
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            SportScore
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // No direct access.
 }
 
-define( 'SPORTSCORE_EMBED_VERSION', '1.0.2' );
+define( 'SPORTSCORE_EMBED_VERSION', '1.0.3' );
 define( 'SPORTSCORE_EMBED_BASE_URL', 'https://sportscore.com' );
 
 /**
@@ -67,6 +67,7 @@ function sportscore_embed_render_iframe( $atts ) {
 			'width'  => '320',
 			'height' => '420',
 			'src'    => '', // Optional: identify this site for our adoption stats.
+			'credit' => '', // Opt-in: render the "Powered by SportScore" credit line.
 		),
 		$atts,
 		'sportscore'
@@ -111,8 +112,15 @@ function sportscore_embed_render_iframe( $atts ) {
 
 	$attribution_href = 'https://sportscore.com/';
 
-	// The attribution line is a free-tier requirement. It ships with the
-	// plugin so users don't forget it — keeps them compliant out of the box.
+	// The "Powered by SportScore" credit is OPT-IN and off by default — no
+	// front-end output is added unless the site owner asks for it, via
+	// credit="yes" on the shortcode or the "Show credit" toggle in the block.
+	$show_credit = in_array(
+		strtolower( trim( (string) $atts['credit'] ) ),
+		array( '1', 'true', 'yes', 'on' ),
+		true
+	);
+
 	ob_start();
 	?>
 	<div class="sportscore-embed-wrap" style="max-width: <?php echo esc_attr( $width ); ?>px;">
@@ -125,9 +133,11 @@ function sportscore_embed_render_iframe( $atts ) {
 			style="border: 1px solid #dce3ef; border-radius: 6px; background: #fff; display: block; max-width: 100%;"
 			title="<?php echo esc_attr( sprintf( '%s %s %s fixtures', $sport, $type, $slug ) ); ?>">
 		</iframe>
+		<?php if ( $show_credit ) : ?>
 		<p class="sportscore-embed-attribution" style="font-size: 12px; margin: 6px 0 0; color: #546277;">
 			<a href="<?php echo esc_url( $attribution_href ); ?>" title="Sports data by SportScore">Powered by SportScore</a>
 		</p>
+		<?php endif; ?>
 	</div>
 	<?php
 	return (string) ob_get_clean();
@@ -163,6 +173,7 @@ function sportscore_embed_register_block() {
 						'slug'   => isset( $attributes['slug'] ) ? $attributes['slug'] : '',
 						'width'  => isset( $attributes['width'] ) ? $attributes['width'] : 320,
 						'height' => isset( $attributes['height'] ) ? $attributes['height'] : 420,
+						'credit' => ( ! empty( $attributes['credit'] ) ) ? 'yes' : '',
 					)
 				);
 			},

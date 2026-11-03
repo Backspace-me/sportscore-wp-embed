@@ -4,7 +4,7 @@ Tags: live scores, fixtures, sports, football, widget
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,7 +21,7 @@ SportScore is a free sports-data service. This plugin is a one-click WordPress w
 * No API key, no signup, no rate-limit paperwork (fair-use cap around 10,000 requests / 24h / IP)
 * Classic shortcode AND a native Gutenberg block — pick either
 * Auto-refreshing, mobile-responsive, dark-mode-aware
-* Shows a small "Powered by SportScore" credit under the widget
+* Optional "Powered by SportScore" credit link — off by default, enable it per embed if you like
 
 **How to use it — shortcode**
 
@@ -35,9 +35,9 @@ Insert the "SportScore — Live Scores & Fixtures" block, then pick sport, type,
 
 Browse teams and competitions at [sportscore.com/embed/](https://sportscore.com/embed/) — there's a one-click builder with presets for popular teams and leagues. Slugs look like `real-madrid`, `premier-league`, `national-basketball-association`, `indian-premier-league`.
 
-**Attribution**
+**Attribution (optional)**
 
-The widget shows a small "Powered by SportScore" credit. SportScore is free to use — see the [terms of use](https://sportscore.com/developers/terms/) for details.
+SportScore is free to use. If you'd like to credit the data source, you can switch on a small "Powered by SportScore" link under the widget — it's **off by default**. Turn it on with the "Show credit" toggle in the block, or `credit="yes"` on the shortcode. See the [terms of use](https://sportscore.com/developers/terms/) for details.
 
 == External services ==
 
@@ -89,6 +89,10 @@ Double-check the slug on sportscore.com. The URL format is `sportscore.com/embed
 
 == Changelog ==
 
+= 1.0.3 =
+* The "Powered by SportScore" credit link is now opt-in and OFF by default. Enable it per embed with the "Show credit" block toggle or `credit="yes"` on the shortcode.
+* No front-end output is added unless you turn the credit on.
+
 = 1.0.2 =
 * Tested up to WordPress 7.1.
 * Aligned text domain with the plugin slug (`sportscore-live-scores-fixtures`).
@@ -107,6 +111,9 @@ Double-check the slug on sportscore.com. The URL format is `sportscore.com/embed
 * Slug input sanitised to `[a-z0-9-]` — malformed shortcodes skip rendering.
 
 == Upgrade Notice ==
+
+= 1.0.3 =
+The "Powered by SportScore" credit is now optional and off by default.
 
 = 1.0.2 =
 Metadata-only update for WordPress 6.9 compatibility. Safe to upgrade.

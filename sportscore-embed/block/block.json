@@ -32,6 +32,10 @@
 		"height": {
 			"type": "number",
 			"default": 420
+		},
+		"credit": {
+			"type": "boolean",
+			"default": false
 		}
 	},
 	"editorScript": "file:./edit.js"
